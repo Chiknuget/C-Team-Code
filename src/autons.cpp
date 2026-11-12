@@ -6,7 +6,8 @@
 /**
  * Resets the constants for auton movement.
  */
-void defaultConstants(){
+void defaultConstants()
+{
   // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
   chassis.setDriveConstants(10, 1.5, 0, 10, 0);
   chassis.setHeadingConstants(6, .4, 0, 1, 0);
@@ -35,7 +36,8 @@ void defaultConstants(){
 //   claw.open();
 // }
 
-SHARK_AUTON("One Pin") {
+SHARK_AUTON("One Pin")
+{
   cascade.raise(0.2);
   chassis.driveDistance(7, 50);
   claw.tiltUp();
@@ -44,7 +46,8 @@ SHARK_AUTON("One Pin") {
   claw.open();
 }
 
-SHARK_AUTON("Blood Hunt L") {
+SHARK_AUTON("Ghoulscore L")
+{
   cascade.raise(0.5);
   claw.close();
   chassis.driveDistance(7, 50);
@@ -56,7 +59,8 @@ SHARK_AUTON("Blood Hunt L") {
   cascade.raise(0.5);
 }
 
-SHARK_AUTON("Blood Hunt R") {
+SHARK_AUTON("Ghoulscore R")
+{
   cascade.raise(0.5);
   claw.close();
   chassis.driveDistance(7, 50);
@@ -75,7 +79,7 @@ SHARK_AUTON("Blood Hunt R") {
 //   cascade.lower(0.2);
 //   claw.open();
 // }
-// 
+//
 // SHARK_AUTON("Middle_L"){
 //   chassis.turnToAngle(-45);
 //   cascade.raise(0.5);
@@ -83,7 +87,7 @@ SHARK_AUTON("Blood Hunt R") {
 //   claw.open();
 //   cascade.lower(0.2);
 // }
-// 
+//
 // SHARK_AUTON("left_side"){
 //     cascade.raise(0.5);
 //     claw.close();
@@ -92,7 +96,7 @@ SHARK_AUTON("Blood Hunt R") {
 //     cascade.lower(0.2);
 //     claw.open();
 // }
-// 
+//
 // SHARK_AUTON("right_side"){
 //     cascade.raise(0.5);
 //     claw.close();
@@ -102,7 +106,7 @@ SHARK_AUTON("Blood Hunt R") {
 //     cascade.lower(0.2);
 //     claw.open();
 // }
-// 
+//
 // SHARK_AUTON("neutral"){
 //     cascade.raise(0.4);
 // }
@@ -113,7 +117,8 @@ SHARK_AUTON("Blood Hunt R") {
 #if SHARK_TESTS
 
 // Should return to the start position.
-SHARK_AUTON("Test: Drive") {
+SHARK_AUTON("Test: Drive")
+{
   chassis.driveDistance(6);
   chassis.driveDistance(12);
   chassis.driveDistance(18);
@@ -121,7 +126,8 @@ SHARK_AUTON("Test: Drive") {
 }
 
 // Should make a full turn and return to the start angle.
-SHARK_AUTON("Test: Turn") {
+SHARK_AUTON("Test: Turn")
+{
   chassis.turnToAngle(5);
   chassis.turnToAngle(30);
   chassis.turnToAngle(90);
@@ -130,13 +136,15 @@ SHARK_AUTON("Test: Turn") {
 }
 
 // Should swing in an S shape.
-SHARK_AUTON("Test: Swing") {
+SHARK_AUTON("Test: Swing")
+{
   chassis.leftSwingToAngle(90);
   chassis.rightSwingToAngle(0);
 }
 
 // Should end roughly where it started.
-SHARK_AUTON("Test: Full") {
+SHARK_AUTON("Test: Full")
+{
   chassis.driveDistance(24);
   chassis.turnToAngle(-45);
   chassis.driveDistance(-36);
