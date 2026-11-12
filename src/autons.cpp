@@ -72,6 +72,42 @@ SHARK_AUTON("Ghoulscore R")
   cascade.raise(0.5);
 }
 
+SHARK_AUTON("Neutral")
+{
+  claw.close();
+  chassis.driveDistance(15, 50);
+  cascade.raise(0.6);
+  chassis.driveDistance(1, 50);
+  cascade.lower(0.2);
+  claw.open();                      // this is where the starting pin goes down
+  chassis.driveDistance(-3.40, 50);
+  cascade.lower(0.4);
+  chassis.turnToAngle(180, 30);     // should be able to turn and go where it started to pick up new pin
+  chassis.driveDistance(13, 50);
+  claw.close();                     // picks up new pin
+  chassis.driveDistance(-3.40, 50);
+  chassis.turnToAngle(180, 30);
+  chassis.driveDistance(12, 50);
+  cascade.raise(0.8);
+  chassis.driveDistance(1, 50);
+  cascade.lower(0.2);               // this is where the picked up pin goes down
+  claw.open();
+  chassis.driveDistance(-3.40, 50);
+  cascade.lower(0.6);
+  chassis.turnToAngle(180, 30);
+  chassis.driveDistance(13, 50);
+  claw.close();                     // this is where the second pin gets picked up
+  chassis.driveDistance(-3, 50);
+  chassis.turnToAngle(180, 30);
+  chassis.driveDistance(12, 50);
+  cascade.raise(1.0);
+  chassis.driveDistance(1, 50);
+  cascade.lower(0.2);
+  claw.open();
+  chassis.driveDistance(-3.40, 50);
+  cascade.lower(0.6);
+}
+
 // SHARK_AUTON("Shark") {
 //   cascade.raise(0.4);
 //   chassis.driveDistance(13, 50);
