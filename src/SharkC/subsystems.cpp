@@ -1,0 +1,5 @@
+#include "SharkC/subsystems.h"
+#include "subsystems/subsysmisc.cpp"
+#include "subsystems/roller.cpp"
+#include "subsystems/lift.cpp"
+#include "subsystems/claw.cpp"
